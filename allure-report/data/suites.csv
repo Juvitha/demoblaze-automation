@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","22210","E2E-03: Customer can find a product through category navigation and purchase it","","2026-09-21","passed","2026-09-21","","e2e03.spec.ts","",""
+"","17998","E2E-01: New customer can sign up, log in and purchase a product","","2026-09-21","passed","2026-09-21","","e2e01.spec.ts","",""
+"","24852","E2E-02: Registered customer can purchase multiple products","","2026-09-21","passed","2026-09-21","","e2e02.spec.ts","",""
+"","27533","E2E-04: Customer can remove a product from the cart and purchase the remaining one","","2026-09-21","passed","2026-09-21","","e2e04.spec.ts","",""
+"","18016","INT-01: Product details and price on the product page match the cart","","2026-09-21","passed","2026-09-21","","int01.spec.ts","",""

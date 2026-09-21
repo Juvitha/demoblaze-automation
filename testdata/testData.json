@@ -1,0 +1,19 @@
+{
+  "user": {
+    "usernamePrefix": "nila",
+    "password": "Nila@123"
+  },
+  "order": {
+    "name": "Nila",
+    "country": "India",
+    "city": "Trichy",
+    "card": "4032033950884192",
+    "month": "02",
+    "year": "2028"
+  },
+  "e2e01": { "category": "Phones", "productName": "Samsung galaxy s6" },
+  "e2e02": { "productA": "Samsung galaxy s6", "productB": "Nokia lumia 1520" },
+  "e2e03": { "category": "Laptops", "productName": "MacBook air" },
+  "e2e04": { "productA": "Nexus 6", "productB": "Iphone 6 32gb" },
+  "int01": { "category": "Monitors", "productName": "Apple monitor 24" }
+}

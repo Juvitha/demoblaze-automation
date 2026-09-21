@@ -17,6 +17,7 @@ pipeline {
                 bat 'node -v'
                 bat 'npm -v'
                 bat 'java -version'
+                bat 'echo %JAVA_HOME%'
                 bat 'echo %PATH%'
             }
         }
@@ -31,11 +32,10 @@ pipeline {
                 bat 'npx playwright test'
             }
         }
-    }
-
-    post {
-        always {
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+        stage('Allure Report') {
+            steps {
+                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            }
         }
     }
 }

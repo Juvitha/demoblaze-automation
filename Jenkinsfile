@@ -10,7 +10,7 @@ pipeline {
         BASE_URL = 'https://demoblaze.com'
         CI = 'true'
         JAVA_HOME = tool 'JDK17'
-        PATH = "${tool 'NodeJS'};${tool 'JDK17'}\\bin;${env.PATH}"
+        PATH = "${tool 'NodeJS'}/bin:${tool 'JDK17'}/bin:${env.PATH}"
     }
 
     stages {
@@ -22,15 +22,15 @@ pipeline {
 
         stage('Install') {
             steps {
-                bat 'node -v'
-                bat 'npm ci'
-                bat 'npx playwright install chromium'
+                sh 'node -v'
+                sh 'npm ci'
+                sh 'npx playwright install chromium'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'npx playwright test --reporter=list --workers=1'
+                sh 'npx playwright test --reporter=list --workers=1'
             }
         }
     }

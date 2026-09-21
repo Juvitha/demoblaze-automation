@@ -12,6 +12,14 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Check Tools') {
+            steps {
+                bat 'node -v'
+                bat 'npm -v'
+                bat 'java -version'
+                bat 'echo %PATH%'
+            }
+        }
         stage('Install') {
             steps {
                 bat 'npm ci'

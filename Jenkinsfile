@@ -12,15 +12,6 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Check Tools') {
-            steps {
-                bat 'node -v'
-                bat 'npm -v'
-                bat 'java -version'
-                bat 'echo %JAVA_HOME%'
-                bat 'echo %PATH%'
-            }
-        }
         stage('Install') {
             steps {
                 bat 'npm ci'
@@ -29,13 +20,15 @@ pipeline {
         }
         stage('Test') {
             steps {
+                bat 'if exist allure-results rmdir /s /q allure-results'
                 bat 'npx playwright test'
             }
         }
-        stage('Allure Report') {
-            steps {
-                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-            }
+    }
+
+    post {
+        always {
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
     }
 }
